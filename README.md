@@ -5,7 +5,7 @@ This repository contains a bioinformatics pipeline designed to identify, annotat
 
 The pipeline automates genome acquisition, ORF prediction, homology-based filtering, viral annotation, redundancy removal, and taxonomic classification using NCBI and ICTV resources.
 
-## 🚀 Features
+## Features
 - **Automated Genome Downloading**: Retrieves genomes directly from NCBI using accession numbers.
 - **ORF Prediction**: Detects Open Reading Frames using `orfipy`.
 - **Host Filtering**: Removes host-like sequences via local BLASTn.
