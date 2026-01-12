@@ -1,4 +1,4 @@
-# EVE Discovery Pipeline (`draft)
+# EVE Discovery Pipeline (`draft`)
 
 ## Overview
 This repository contains a bioinformatics pipeline designed to identify, annotate, and analyze **Endogenous Viral Elements (EVEs)** derived from non-retroviral RNA viruses within eukaryotic genomes (with a focus on fungi, though fully adaptable).
