@@ -20,6 +20,6 @@ Ensure the following tools are installed and available in your system path:
 
 1. **Python 3.8+**
 2. **NCBI BLAST+** (`makeblastdb`, `blastn`)
-3. **DIAMOND**
+3. **DIAMOND** (`blastx`)
 4. **CD-HIT**
 5. **ORFipy**
