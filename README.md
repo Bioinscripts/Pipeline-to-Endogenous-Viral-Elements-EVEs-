@@ -28,7 +28,12 @@ Ensure the following tools are installed and available in your system path:
 ## Install Databases
 
 ### RefSeq Viral release
+Podemos baixar as proteínas virais para o alinhamento a nível de blastX com as ORFs preditas em cada genoma através do site: (`https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/`).
+Utiliza-se o banco de dados proteico (`https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.1.protein.faa.gz`).
 
-### ICTV taxonomy
+<img width="502" height="320" alt="image" src="https://github.com/user-attachments/assets/19cd1269-fb19-46df-9354-171194cd77c8" />
+
+### Taxonomy
+Os dados de taxonomia são referentes à tabela do ICTV do ano de 2023, algumas espécies novas ou ainda não catalogadas foram inferidas em conjunto com o banco de dados do NCBI através do 
 
 ### 
