@@ -26,16 +26,14 @@ Ensure the following tools are installed and available in your system path:
 6. **ENTREZ**
 7. **Biopython**
 
-
 ## Install Databases
 
 ### RefSeq Viral release
-Podemos baixar as proteínas virais para o alinhamento a nível de blastX com as ORFs preditas em cada genoma através do site: (`https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/`).
-Utiliza-se o banco de dados proteico (`https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.1.protein.faa.gz`).
+Viral proteins were downloaded for Diamond BLASTx alignment against the predicted ORFs of each genome from the NCBI RefSeq viral release site (https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/). The protein database used was the RefSeq viral protein set (https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.1.protein.faa.gz).
 
 <img width="502" height="320" alt="image" src="https://github.com/user-attachments/assets/19cd1269-fb19-46df-9354-171194cd77c8" />
 
-\**It is important to note that additional databases may be utilized according to the specific objectives of each study.**\
+**It is important to note that additional databases may be utilized according to the specific objectives of each study.**
 
 ### Taxonomy
   
