@@ -1,6 +1,6 @@
-# EVE Discovery Pipeline (`draft`)
+# EVE Discovery Pipeline
 
-## Overview
+## Introduction
 This repository contains a bioinformatics pipeline designed to identify, annotate, and analyze **Endogenous Viral Elements (EVEs)** derived from non-retroviral RNA viruses within eukaryotic genomes (with a focus on fungi, though fully adaptable).
 
 The pipeline automates genome acquisition, ORF prediction, homology-based filtering, viral annotation, redundancy removal, and taxonomic classification using NCBI and ICTV resources.
@@ -23,3 +23,12 @@ Ensure the following tools are installed and available in your system path:
 3. **DIAMOND** (`blastx`)
 4. **CD-HIT**
 5. **ORFipy**
+
+
+## Install Databases
+
+### RefSeq Viral release
+
+### ICTV taxonomy
+
+### 
