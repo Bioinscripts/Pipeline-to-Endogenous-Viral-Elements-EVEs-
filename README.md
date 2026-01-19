@@ -23,6 +23,8 @@ Ensure the following tools are installed and available in your system path:
 3. **DIAMOND** (`blastx`)
 4. **CD-HIT**
 5. **ORFipy**
+6. **ENTREZ**
+7. **Biopython**
 
 
 ## Install Databases
@@ -36,6 +38,7 @@ Utiliza-se o banco de dados proteico (`https://ftp.ncbi.nlm.nih.gov/refseq/relea
 ** Destacamos que outros banco de dados podem ser utilizadas para o interesse de cada pesquisa.
 
 ### Taxonomy
-Os dados de taxonomia são referentes à tabela do ICTV do ano de 2023, algumas espécies novas ou ainda não catalogadas foram inferidas em conjunto com o banco de dados do NCBI através do 
+  
+The taxonomic data were obtained from the ICTV table released in 2023 (). For newly described species or those not yet cataloged, taxonomy was inferred in conjunction with the NCBI database, using protein identifiers and their corresponding genetic material. Owing to the recurrent presence of certain proteins, a reference database was constructed from previous results to facilitate the initial identification of genetic material. This database was subsequently employed to advance the pipeline for less common sequences that required further investigation via ENTREZ.
 
 ### 
