@@ -35,7 +35,7 @@ Utiliza-se o banco de dados proteico (`https://ftp.ncbi.nlm.nih.gov/refseq/relea
 
 <img width="502" height="320" alt="image" src="https://github.com/user-attachments/assets/19cd1269-fb19-46df-9354-171194cd77c8" />
 
-** It is important to note that additional databases may be utilized according to the specific objectives of each study. **
+\**It is important to note that additional databases may be utilized according to the specific objectives of each study.**\
 
 ### Taxonomy
   
