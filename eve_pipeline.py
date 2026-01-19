@@ -8,14 +8,14 @@ from Bio.Seq import Seq
 
 # Updated imports to match the new English filenames and function names
 from blast_processing import (
-    filter_blast_results,        # formerly extracao
+    filter_blast_results,        
     save_tsv,
-    process_family,              # formerly processar_familia
-    update_local_database,       # formerly atualizar_banco_dados_local
-    save_local_database          # formerly salvar_banco_dados_local
+    process_family,              
+    update_local_database,       
+    save_local_database          
 )
-from remove_duplicates import cd_hit_filter_pipeline # formerly pipeline_filtro_cd_hit
-from online_blast import batch_blast # Ensure the file is named online_blast.py
+from remove_duplicates import cd_hit_filter_pipeline 
+from online_blast import batch_blast
 
 
 # ============================
