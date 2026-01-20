@@ -18,14 +18,14 @@ The pipeline automates genome acquisition, ORF prediction, homology-based filter
 Ensure the following tools are installed and available in your system path:
 
 1. **Python 3.8+**
-2. **NCBI BLAST+** (`makeblastdb`, `blastn`)
-3. **DIAMOND** (`blastx`)
-4. **CD-HIT**
-5. **ORFipy**
-6. **ENTREZ**
-7. **Biopython**
-8. **Openpyxl**
-9. 
+2. **Biopython** - Python library
+3. **Openpyxl** - Python library
+4. **NCBI BLAST+** (`makeblastdb`, `blastn`)
+5. **DIAMOND** (`blastx`)
+6. **CD-HIT**
+7. **ORFipy** - Python library
+8. **ENTREZ**
+
 
 ## Install Databases
 
