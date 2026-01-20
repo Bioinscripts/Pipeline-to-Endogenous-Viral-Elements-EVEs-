@@ -53,3 +53,24 @@ python pipeline.py \
   --p viral_proteins.fasta \
   --t 8
 ```
+
+### Output Files
+
+```
+OUTPUT_SAMPLE/
+├── fasta_files/
+│   ├── SAMPLE_orig.fasta
+│   ├── SAMPLE_clusters_nr.fasta
+│   └── unanalyzed_sequences.fasta
+│
+├── blast_results/
+│   ├── all_blastn_results.tsv
+│   ├── all_blastn_alignments.tsv
+│   ├── all_blastx_results.tsv
+│   └── all_blastx_alignments.tsv
+│
+├── logs/
+│   └── SAMPLE.log
+│
+└── README_output.md
+```
