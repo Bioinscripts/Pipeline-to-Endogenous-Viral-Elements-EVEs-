@@ -39,7 +39,7 @@ The protein database used was the RefSeq viral protein set (https://ftp.ncbi.nlm
 
 ## Taxonomy
   
-The taxonomic data were obtained from the ICTV table released in 2023 (`ICTV_Master_Species_List_2022_MSL38.v2.xlsx`). For newly described species or those not yet cataloged, taxonomy was inferred in conjunction with the NCBI database, using protein identifiers and their corresponding genetic material. Owing to the recurrent presence of certain proteins, a reference database was constructed from previous results to facilitate the initial identification of genetic material. This database was subsequently employed to advance the pipeline for less common sequences that required further investigation via ENTREZ.
+The taxonomic data were obtained from the ICTV table released in 2022 (`ICTV_Master_Species_List_2022_MSL38.v2.xlsx`). For newly described species or those not yet cataloged, taxonomy was inferred in conjunction with the NCBI database, using protein identifiers and their corresponding genetic material. Owing to the recurrent presence of certain proteins, a reference database was constructed from previous results to facilitate the initial identification of genetic material. This database was subsequently employed to advance the pipeline for less common sequences that required further investigation via ENTREZ.
 
 ## Usage
 
