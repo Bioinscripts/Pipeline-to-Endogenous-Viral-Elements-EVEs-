@@ -46,5 +46,8 @@ The taxonomic data were obtained from the ICTV table released in 2023 (`ICTV_Mas
 This is the structure to running:
 
 '''
-
+python pipeline.py \
+  --g genome_specie.fasta \
+  --p viral_proteins.fasta \
+  --t 8
 '''
