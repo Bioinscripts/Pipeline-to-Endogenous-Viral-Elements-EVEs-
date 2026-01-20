@@ -98,39 +98,45 @@ def sequence_alignment(
 ):
     os.makedirs(output_dir, exist_ok=True)
 
-    # ---------- BLASTn ----------
-    blastn_out = os.path.join(output_dir, f"{accession}_orfs_blastn.tsv")
+    # ======================================================
+    # BLASTn (OPTIONAL – host genome filtering)
+    # ======================================================
+    if nucleotide_db:
+        print("[+] Running BLASTn against nucleotide database")
 
-    # Check if blastdb files exist (checking common extensions)
-    if not all(os.path.exists(f"{nucleotide_db}.{ext}") for ext in ("nhr", "nin", "nsq")):
-        print(f"[!] Nucleotide DB not indexed. Running makeblastdb...")
-        os.system(f"makeblastdb -in {nucleotide_db} -dbtype nucl")
+        blastn_out = os.path.join(output_dir, f"{accession}_orfs_blastn.tsv")
 
-    os.system(
-        f"blastn -query {orf_fasta} -db {nucleotide_db} -out {blastn_out} "
-        f"-num_threads {threads} "
-        f"-outfmt '6 qseqid sseqid pident length mismatch gapopen "
-        f"qstart qend sstart send evalue bitscore qcovs slen' "
-        f"-max_target_seqs 1"
-    )
+        if not all(os.path.exists(f"{nucleotide_db}.{ext}") for ext in ("nhr", "nin", "nsq")):
+            print("[!] Nucleotide DB not indexed. Running makeblastdb...")
+            os.system(f"makeblastdb -in {nucleotide_db} -dbtype nucl")
 
-    aligned_ids = set()
-    # Safely handle if blastn_out wasn't created (e.g., no hits or error)
-    if os.path.exists(blastn_out):
-        with open(blastn_out) as f:
-            for line in f:
-                # Check E-value column (index 10)
-                parts = line.split("\t")
-                if len(parts) > 10 and float(parts[10]) < 1e-5:
-                    aligned_ids.add(parts[0])
+        os.system(
+            f"blastn -query {orf_fasta} -db {nucleotide_db} -out {blastn_out} "
+            f"-num_threads {threads} "
+            f"-outfmt '6 qseqid sseqid pident length mismatch gapopen "
+            f"qstart qend sstart send evalue bitscore qcovs slen' "
+            f"-max_target_seqs 1"
+        )
 
-    filtered_fasta = os.path.join(output_dir, f"{accession}_filtered.fasta")
-    with open(orf_fasta) as inp, open(filtered_fasta, "w") as out:
-        for record in SeqIO.parse(inp, "fasta"):
-            if record.id not in aligned_ids:
-                SeqIO.write(record, out, "fasta")
+        aligned_ids = set()
+        if os.path.exists(blastn_out):
+            with open(blastn_out) as f:
+                for line in f:
+                    parts = line.split("\t")
+                    if len(parts) > 10 and float(parts[10]) < 1e-5:
+                        aligned_ids.add(parts[0])
 
-    print(f"[✓] {len(aligned_ids)} ORFs removed after host-genome alignment.")
+        filtered_fasta = os.path.join(output_dir, f"{accession}_filtered.fasta")
+        with open(orf_fasta) as inp, open(filtered_fasta, "w") as out:
+            for record in SeqIO.parse(inp, "fasta"):
+                if record.id not in aligned_ids:
+                    SeqIO.write(record, out, "fasta")
+
+        print(f"[✓] {len(aligned_ids)} ORFs removed after host-genome alignment.")
+
+    else:
+        print("[!] No nucleotide DB provided — skipping BLASTn step")
+        filtered_fasta = orf_fasta
 
     # ---------- DIAMOND blastx ----------
     blastx_out = os.path.join(output_dir, f"{accession}_orfs_diamond.tsv")
@@ -178,7 +184,7 @@ def main():
     parser.add_argument("--c", dest="accession", help="Genome accession (e.g., GCF_...)")
     parser.add_argument("--g", dest="genome_file", help="Local genome FASTA file")
     parser.add_argument("--p", dest="protein_db", required=True, help="Protein database path")
-    parser.add_argument("--n", dest="nucleotide_db", required=True, help="Nucleotide database path")
+    parser.add_argument("--n",dest="nucleotide_db",default=None,help="Nucleotide database path (optional; if not provided, BLASTn step is skipped)")
     parser.add_argument("--t", dest="threads", type=int, default=4, help="Number of threads")
 
     args = parser.parse_args()
