@@ -43,8 +43,8 @@ The taxonomic data were obtained from the ICTV table released in 2023 (`ICTV_Mas
 ## Usage
 ### Query example
 
-This is the structure to running:
-
+This is the basic structure for running the pipeline.  
+The host-genome filtering step (BLASTn) is optional and only performed if a nucleotide database is provided.
 ```
 python pipeline.py \
   --g genome_specie.fasta \
