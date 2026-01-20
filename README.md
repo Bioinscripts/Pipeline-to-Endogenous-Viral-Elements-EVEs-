@@ -25,6 +25,8 @@ Ensure the following tools are installed and available in your system path:
 5. **ORFipy**
 6. **ENTREZ**
 7. **Biopython**
+8. **Openpyxl**
+9. 
 
 ## Install Databases
 
