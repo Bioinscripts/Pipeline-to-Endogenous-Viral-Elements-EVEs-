@@ -1,3 +1,7 @@
+###
+(Draft)
+###
+
 import subprocess
 from pathlib import Path
 import sys
@@ -5,10 +9,9 @@ import sys
 # File containing genome accessions
 genome_list_file = "genomes.txt"
 
-# Fixed database paths
-# IMPORTANT: Update these paths to your actual English paths if they changed
-protein_db = "/home/joaopedro/Downloads/sequences_1.fasta"
-nucleotide_db = "/home/joaopedro/work_local/Laiana/seq/data_cluster_laiana.fasta"
+# Fixed database paths 
+protein_db = ""
+nucleotide_db = ""
 threads = "8"
 
 # Create log directory
